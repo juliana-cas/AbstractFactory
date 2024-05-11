@@ -1,0 +1,24 @@
+Explicación implementación:
+
+1. Abstract Factory (CarFactory):
+La clase CarFactory es una clase abstracta que define una interfaz para crear diferentes tipos de automóviles, pero sin especificar las clases concretas de esos automóviles.
+Define un método abstracto create_car() que debe ser implementado por las fábricas concretas.
+
+2. Concrete Factories (MazdaFactory, NissanFactory, RenaultFactory):
+Estas clases son las implementaciones concretas de la interfaz CarFactory.
+Cada fábrica concreta es responsable de crear una familia específica de objetos relacionados (automóviles de una marca específica en este caso).
+Implementan el método create_car(), que devuelve instancias de los diferentes tipos de automóviles asociados con esa marca.
+
+3. Abstract Products (Car):
+La clase Car es una clase abstracta que define la interfaz para los productos que una fábrica concreta crea.
+En este caso, Car define el método abstracto drive(), que representa una acción común que pueden realizar todos los tipos de automóviles.
+
+4. Concrete Products (MazdaSedan, MazdaHatchback, MazdaSUV, NissanSedan, NissanHatchback, NissanSUV, RenaultSedan, RenaultHatchback, RenaultSUV):
+Estas clases son las implementaciones concretas de los productos definidos por la interfaz Car.
+Cada clase representa un tipo específico de automóvil asociado con una marca específica.
+Implementan el método drive(), que proporciona una implementación específica de cómo se realiza la acción de conducir para ese tipo de automóvil.
+
+5. Cliente (main()):
+La función main() actúa como el cliente que utiliza el patrón Abstract Factory para crear objetos sin conocer las clases concretas reales.
+El cliente crea instancias de las fábricas concretas (MazdaFactory, NissanFactory, RenaultFactory) y las utiliza para crear diferentes tipos de automóviles.
+El cliente trabaja con las instancias de los productos (MazdaSedan, MazdaHatchback, etc.) a través de su interfaz común (Car) sin preocuparse por las clases concretas subyacentes.
